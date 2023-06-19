@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  gatsbyjs:
+    build:
+      context: ./Docker/GatsbyJs
+    ports:
+      - 8000:8000
+    volumes:
+      - ./frontend:/frontend
+    networks:
+      - gatsbymfb
+
+networks:
+  gatsbymfb:
+    driver: bridge
